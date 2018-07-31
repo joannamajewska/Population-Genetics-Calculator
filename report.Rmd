@@ -1,0 +1,84 @@
+---
+title: <font size="5"> Report of linkage disequilibrium </font> 
+output: html_document
+---
+
+<style>
+  .col2 {
+    columns: 2 200px;         
+    -webkit-columns: 2 200px; 
+    -moz-columns: 2 200px;    
+  }
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(shiny)
+library(rmarkdown)
+library(kableExtra)
+library(knitr)
+```
+
+<div class="col2">
+
+**Table 1**: Number of individual genotypes
+
+```{r, echo=FALSE}
+dt <- kable(LD()[[1]])
+kable_styling(dt, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+**Table 2**: The expected frequency of haplotypes + alleles frequency
+
+```{r, echo=FALSE}
+dt2 <- kable(LD()[[2]])
+kable_styling(dt2, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+</div>
+
+**Table 3**: The expected and observed frequency (and the number) of haplotypes
+
+```{r, echo=FALSE}
+dt3 <- kable(LD()[[3]])
+kable_styling(dt3, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+**Table 4**: The expected frequency of haplotypes in terms of linkage disequilibrium + alleles frequency
+
+```{r, echo=FALSE}
+dt4 <- kable(LD()[[4]])
+kable_styling(dt4, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+**Table 5**: Basic statistics of linkage disequilibrium
+
+```{r, echo=FALSE}
+dt5 <- kable(LD()[[5]])
+kable_styling(dt5, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+<div class="col2">
+**Table 6**: Combined (observed) number of genotypes
+
+```{r, echo=FALSE}
+dt6 <- kable(LD()[[6]])
+kable_styling(dt6, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+**Table 7**: Combined (expected) number of genotypes
+
+```{r, echo=FALSE}
+dt7 <- kable(LD()[[7]])
+kable_styling(dt7, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+</div>
+
+**Table 8**: Chi - square test for linkage disequilibrium between two loci
+
+```{r, echo=FALSE}
+dt8 <- kable(LD()[[8]])
+kable_styling(dt8, bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
